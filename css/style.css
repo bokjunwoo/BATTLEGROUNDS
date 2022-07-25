@@ -1,0 +1,213 @@
+@charset "UTF-8";
+
+/* FONT 
+font-family: 'IBM Plex Sans KR', sans-serif;
+font-family: 'Rampart One', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Mochiy+Pop+One&display=swap');
+
+/* RESET */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* HEADER */
+header {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 100px;
+    justify-content: space-between;
+    padding: 5vh 5vw;
+    align-items: center;
+    z-index: 999;
+    background-color: black
+}
+
+header #snb {
+    display: none;
+}
+
+/* GNB */
+header #gnb {
+    display: flex;
+}
+
+header #gnb li {
+    width: 12vw;
+    text-align: center;
+}
+header #gnb li a:hover {
+    border-bottom: 3px solid yellow;
+    /* text-decoration은 글자에 너무 붙어있어 사용안함 */
+}
+
+header #gnb li a {
+    font: 20px "IBM Plex Sans KR";
+    letter-spacing: 1px;
+    color: #dadada
+}
+
+/* SNS */
+.sns {
+    display: flex;
+}
+
+.sns li {
+    margin: 0px 10px;
+}
+
+.sns li a {
+    font-size: 16px;
+    color: #333;
+}
+
+/* FIGURE */
+figure {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+}
+
+figure video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+figure .text {
+    position: absolute;
+    left: 5vw;
+    top: 25%;
+    transform: translate(0, -50%);
+}
+
+figure .text p {
+    font: normal 6vw "Mochiy Pop One";
+    color: #dadada;
+    text-shadow: 2px 2px 5px black;
+}
+
+figure .text ul {
+    display: flex;
+    margin-top: 30px;
+}
+
+figure .text ul li {
+    margin: 0 20px;
+    background-color: #333;
+    border-radius: 3px;
+}
+
+figure .text ul li .login {
+    width: 130px;
+    text-align: center;
+}
+
+figure .text ul li strong {
+    display: block;
+    padding: 20px 30px;
+    font: 18px/1 "IBM Plex Sans KR";
+    color: gold;
+    letter-spacing: 1px;
+    border-radius: 3px;
+}
+
+figure .text ul li:hover .fire {
+    background-image: url(../img/fire.gif);
+    background-position: center;
+}
+
+figure .text ul li:hover .login {
+    background-color: gold;
+    color: black;
+}
+
+/* FOOTER */
+footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font: 12px/1 "arial";
+    color: white;
+    letter-spacing: 2px;
+    text-align: center;
+    padding: 5vh 5vw;
+    z-index: 2;
+}
+
+/* 반응형 MOBILE*/
+@media screen and (max-width: 720px) {
+    header #gnb {
+        display: none;
+    }
+
+    header .sns {
+        display: none;
+    }
+
+    header #snb {
+        display: block;
+    }
+
+    header #snb .btn_menu {
+        color: #dadada;
+        font-size: 30px;
+    }
+
+    header #snb .sub_menu {
+        position: absolute;
+        width: 200px;
+        right: 5vw;
+        padding: 15px 25px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border: 1px solid #333;
+        border-radius: 3px;
+        text-align: right;
+        opacity: 1;
+        transition: 0.4s;
+    }
+
+    header #snb .sub_menu.hide {
+        opacity: 0;
+    }
+
+    header #snb .sub_menu li {
+        padding: 20px 0px;
+        font: 16px/1 "IBM Plex Sans KR";
+    }
+
+    header #snb .sub_menu li a {
+        color: #dadada
+    }
+
+    header #snb .sub_menu li a:hover {
+        text-decoration: underline;
+    }
+
+    header #snb .sub_menu li a i {
+        margin-left: 8px;
+    }
+    
+    figure .text p {
+        font-size: 10vw;
+    }
+
+    figure .text ul li {
+        margin: 10px;
+    }
+}
